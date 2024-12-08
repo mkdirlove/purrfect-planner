@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: rgba(0, 0, 0, 0.54); /* Semi-transparent overlay */
+    background-image: url('https://img.freepik.com/free-vector/cats-doodle-pattern-background_53876-100663.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire screen proportionally */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-position: center center; /* Centers the image */
+    background-blend-mode: overlay; /* Combines the background color and image */
+  }
+
+  .input {
+    width: 50%; /* Sets the input field to 50% of its container width */
+    max-width: 300px; /* Ensures the input doesn't stretch too much */
+    border-radius: 10px;
+    border: 1px solid #ff6347;
+    padding: 8px; /* Adjusts padding for a balanced look */
+  }
+  
+  .input.is-small {
+    padding: 6px; /* Smaller padding for compact inputs */
+    font-size: 0.875rem; /* Adjust font size */
+  }
+
+.title, .subtitle {
+    font-family: 'Brush Script MT', cursive;
+  color: #FF6347; /* Cute orange color */
+}
+
+.table th, .table td {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+}
+
+.select {
+  background-color: #ffebcd; /* Cat-themed soft colors */
+  border-radius: 8px;
+}
+
+.select select {
+  background-color: #ffebcd;
+  border-radius: 40px;
+}
+
+.input {
+  border-radius: 10px;
+  border: 1px solid #ff6347;
+}
+
+.has-text-centered {
+  text-align: center;
+}
+
+/* Cat icons */
+.fas.fa-check {
+  color: #98FB98; /* Light green for check */
+}
+
+.fas.fa-undo {
+  color: #FFD700; /* Soft yellow for undo */
+}
+
+.fas.fa-trash {
+  color: #FF69B4; /* Pink for delete */
+}
+
+.priority-low {
+  color: #ADD8E6; /* Light blue for low priority */
+}
+
+.priority-medium {
+  color: #FF6347; /* Orange for medium priority */
+}
+
+.priority-high {
+  color: #FF4500; /* Red for high priority */
+}
+  

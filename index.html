@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all devices -->
+  <title>Purrfect Planner</title> <!-- Title of the page that appears in the browser tab -->
+
+  <!-- Bulma CSS framework for styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <!-- Custom styles for additional design -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font Awesome for using icons (used for icons in buttons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="has-background-light"> <!-- Applies a light background color to the body -->
+
+  <!-- Sticky Navigation Bar -->
+  <nav class="navbar is-fixed-top is-dark">
+    <div class="navbar-brand">
+      <!-- Logo for the app, clickable but no action here -->
+      <a class="navbar-item" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/128/763/763789.png" alt="Meow Minder" height="50px">
+      </a>
+
+      <!-- Navbar burger icon (appears on small screens for a responsive menu) -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end"> <!-- Aligns navbar items to the right -->
+        <!-- Navigation links: Home and About -->
+        <a class="navbar-item" href="#">Home</a>
+        <a class="navbar-item" href="#" onclick="openModal()">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <section class="section" style="margin-top: 15px;"> <!-- Adds margin to avoid navbar overlap -->
+      
+      <!-- Logo and title for the Purrfect Planner -->
+      <center><img src="https://cdn-icons-png.flaticon.com/128/763/763789.png" alt="Meow Minder" height="250px"></center>
+      <h1 class="title has-text-centered has-text-primary">Purrfect Planner</h1>
+
+      <div class="columns">
+        <!-- Column 1: Form for adding tasks -->
+        <div class="column is-half">
+          <!-- Task input field -->
+          <div class="field">
+            <label class="label has-text-primary">Task</label>
+            <div class="control">
+              <input class="input is-rounded" id="task-input" type="text" placeholder="Enter task">
+            </div>
+          </div>
+
+          <!-- Priority selection field (dropdown) -->
+          <div class="field">
+            <label class="label has-text-primary">Priority</label>
+            <div class="control">
+              <div class="select is-rounded">
+                <select id="priority-input">
+                  <option value="1">Low</option>
+                  <option value="2">Medium</option>
+                  <option value="3">High</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deadline input field -->
+          <div class="field">
+            <label class="label has-text-primary">Deadline</label>
+            <div class="control">
+              <input class="input is-rounded" id="deadline-input" type="date">
+            </div>
+          </div>
+
+          <!-- Button to add the task -->
+          <div class="field">
+            <div class="control">
+              <br>
+              <button class="button is-link is-rounded" onclick="addTask()">Add Task</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Table displaying added tasks -->
+        <div class="column is-half">
+          <h2 class="subtitle has-text-centered">ToDo List</h2>
+          <table class="table is-fullwidth" id="task-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Deadline</th>
+                <th>Actions</th> <!-- Buttons for task actions (mark as done, delete) -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Tasks will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Modal -->
+  <div id="about-modal" class="modal">
+    <div class="modal-background" onclick="closeModal()"></div> <!-- Clicking outside the modal closes it -->
+    <div class="modal-content">
+      <div class="box">
+        <!-- About page content -->
+        <h2 class="title has-text-centered">About Purrfect Planner</h2>
+        <p class="content">Purrfect Planner is a fun and easy-to-use ToDo list application designed to help you stay organized. Add tasks, set priorities, and track deadlines all while enjoying the cute cat-themed interface. Stay productive and have fun!</p>
+        <div class="has-text-centered">
+          <!-- Button to close the About modal -->
+          <button class="button is-link" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle Modal and task functionality -->
+  <script src="script.js"></script>
+  <script>
+    // Toggle the navigation burger menu on small screens
+    document.querySelector('.navbar-burger').addEventListener('click', () => {
+      document.getElementById('navbarMenu').classList.toggle('is-active');
+    });
+
+    // Open the About modal
+    function openModal() {
+      document.getElementById('about-modal').classList.add('is-active');
+    }
+
+    // Close the About modal
+    function closeModal() {
+      document.getElementById('about-modal').classList.remove('is-active');
+    }
+  </script>
+</body>
+
+</html>
